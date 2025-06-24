@@ -427,4 +427,241 @@ document.querySelectorAll('a, button, input, textarea').forEach(element => {
     element.addEventListener('blur', function() {
         this.style.outline = 'none';
     });
-}); 
+});
+
+// Enhanced Contact Form with Vercel Serverless Backend
+class SecureContactForm {
+    constructor() {
+        this.attempts = 0;
+        this.lastAttempt = 0;
+        this.rateLimitCount = 0;
+        this.rateLimitStart = 0;
+        this.isProcessing = false;
+        this.maxAttempts = 3;
+        this.cooldownPeriod = 300000; // 5 minutes
+        this.rateLimitWindow = 60000; // 1 minute
+    }
+
+    // Security Layer 1: Rate Limiting
+    checkRateLimit() {
+        const now = Date.now();
+        
+        // Reset rate limit counter if window has passed
+        if (now - this.rateLimitStart > this.rateLimitWindow) {
+            this.rateLimitCount = 0;
+            this.rateLimitStart = now;
+        }
+        
+        // Check if rate limit exceeded
+        if (this.rateLimitCount >= this.maxAttempts) {
+            const remainingTime = Math.ceil((this.cooldownPeriod - (now - this.lastAttempt)) / 1000);
+            throw new Error(`Too many attempts. Please wait ${remainingTime} seconds before trying again.`);
+        }
+        
+        // Check cooldown period
+        if (now - this.lastAttempt < this.cooldownPeriod) {
+            const remainingTime = Math.ceil((this.cooldownPeriod - (now - this.lastAttempt)) / 1000);
+            throw new Error(`Please wait ${remainingTime} seconds before sending another message.`);
+        }
+        
+        this.rateLimitCount++;
+        this.lastAttempt = now;
+        return true;
+    }
+
+    // Security Layer 2: Input Validation and Sanitization
+    validateAndSanitize(formData) {
+        const errors = [];
+        
+        // Name validation
+        if (!formData.from_name || formData.from_name.trim().length < 2) {
+            errors.push('Name must be at least 2 characters long.');
+        }
+        if (formData.from_name.length > 50) {
+            errors.push('Name must be less than 50 characters.');
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.from_email)) {
+            errors.push('Please enter a valid email address.');
+        }
+        
+        // Subject validation
+        if (!formData.subject || formData.subject.trim().length === 0) {
+            errors.push('Subject is required.');
+        }
+        if (formData.subject.length > 100) {
+            errors.push('Subject must be less than 100 characters.');
+        }
+        
+        // Message validation
+        if (!formData.message || formData.message.trim().length < 10) {
+            errors.push('Message must be at least 10 characters long.');
+        }
+        if (formData.message.length > 1000) {
+            errors.push('Message must be less than 1000 characters.');
+        }
+        
+        if (errors.length > 0) {
+            throw new Error(errors.join(' '));
+        }
+        
+        // Sanitize inputs
+        return {
+            from_name: this.sanitizeInput(formData.from_name),
+            from_email: this.sanitizeInput(formData.from_email),
+            subject: this.sanitizeInput(formData.subject),
+            message: this.sanitizeInput(formData.message)
+        };
+    }
+
+    // Security Layer 3: Input Sanitization
+    sanitizeInput(input) {
+        if (typeof input !== 'string') return '';
+        
+        return input
+            .trim()
+            .replace(/[<>]/g, '') // Remove potential HTML tags
+            .replace(/javascript:/gi, '') // Remove javascript: protocol
+            .replace(/on\w+=/gi, '') // Remove event handlers
+            .substring(0, 1000); // Limit length
+    }
+
+    // Send email via Vercel serverless function
+    async sendEmail(formData) {
+        try {
+            // Check rate limiting
+            this.checkRateLimit();
+            
+            // Validate and sanitize inputs
+            const sanitizedData = this.validateAndSanitize(formData);
+            
+            // Determine the API endpoint based on environment
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const apiEndpoint = isLocalhost 
+                ? 'http://localhost:3000/api/send-email'  // For local development
+                : '/api/send-email';                      // For production (Vercel)
+            
+            // Send email using Vercel serverless function
+            const response = await fetch(apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(sanitizedData)
+            });
+            
+            const result = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(result.message || 'Failed to send email');
+            }
+            
+            return result;
+            
+        } catch (error) {
+            console.error('Email sending error:', error);
+            throw error;
+        }
+    }
+}
+
+// Initialize secure contact form
+const secureContactForm = new SecureContactForm();
+
+// Enhanced sendEmail function with Vercel backend
+async function sendEmail(e) {
+    e.preventDefault();
+    
+    // Prevent double submission
+    if (secureContactForm.isProcessing) {
+        showNotification('Please wait, your message is being sent...', 'info');
+        return;
+    }
+    
+    // Get form elements
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitLoading = document.getElementById('submitLoading');
+    const form = document.getElementById('contactForm');
+    
+    try {
+        // Set processing state
+        secureContactForm.isProcessing = true;
+        submitBtn.disabled = true;
+        submitText.style.display = 'none';
+        submitLoading.style.display = 'inline';
+        
+        // Get form data
+        const formData = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Send email via Vercel serverless function
+        const result = await secureContactForm.sendEmail(formData);
+        
+        // Success
+        showNotification(result.message || 'Message sent successfully! I\'ll get back to you soon.', 'success');
+        form.reset();
+        
+        // Reset rate limit on success
+        secureContactForm.rateLimitCount = 0;
+        
+    } catch (error) {
+        // Error handling
+        let errorMessage = 'Failed to send message. Please try again.';
+        
+        if (error.message.includes('Too many attempts') || error.message.includes('Please wait')) {
+            errorMessage = error.message;
+        } else if (error.message.includes('validation') || error.message.includes('required')) {
+            errorMessage = error.message;
+        } else if (error.message.includes('Server configuration error')) {
+            errorMessage = 'Contact form is temporarily unavailable. Please try again later.';
+        }
+        
+        showNotification(errorMessage, 'error');
+        
+    } finally {
+        // Reset processing state
+        secureContactForm.isProcessing = false;
+        submitBtn.disabled = false;
+        submitText.style.display = 'inline';
+        submitLoading.style.display = 'none';
+    }
+}
+
+// Enhanced notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+            <button onclick="this.parentElement.parentElement.remove()" class="notification-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
+} 
