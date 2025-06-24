@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Intrusion Detection System | Alec Pham</title>
+    <meta name="description" content="A detailed case study of Network Intrusion Detection System implementation using Snort in a multi-VM environment">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project-specific customizations can be added here if needed */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Alec.</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="case-study">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header">
+            <h1 class="case-study-title">Network Intrusion Detection System</h1>
+            <p class="case-study-subtitle">Snort-Based IDS Implementation in Multi-VM Enterprise Environment</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Snort</span>
+                <span class="tech-tag">Virtualization</span>
+                <span class="tech-tag">Network Security</span>
+                <span class="tech-tag">Packet Analysis</span>
+                <span class="tech-tag">Threat Detection</span>
+                <span class="tech-tag">Linux</span>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Project Overview</h2>
+            <p>
+                This project involved building and deploying a comprehensive Network Intrusion Detection System (NIDS) 
+                using Snort in a multi-virtual machine environment that simulates enterprise network infrastructure. 
+                The system was designed to detect various types of network attacks and provide hands-on experience 
+                with network forensics, protocol analysis, and threat detection.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>Key Objectives:</h3>
+                <ul>
+                    <li>Design and implement a multi-VM lab environment simulating enterprise networks</li>
+                    <li>Deploy Snort-based Intrusion Detection System on gateway machine</li>
+                    <li>Develop and test custom Snort rules for various attack types</li>
+                    <li>Gain hands-on experience in network forensics and threat detection</li>
+                    <li>Analyze network traffic patterns and identify malicious activities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Architecture</h2>
+            
+            <h3>Lab Environment Design</h3>
+            <p>
+                The project utilized a multi-VM architecture to simulate a realistic enterprise network environment, 
+                including internal networks, DMZ zones, and external threat sources. This setup provided a controlled 
+                environment for testing and analyzing various network attacks.
+            </p>
+
+            <h3>Network Topology</h3>
+            <ul>
+                <li><strong>Gateway VM:</strong> Hosted Snort IDS and acted as network perimeter defense</li>
+                <li><strong>Internal Network VMs:</strong> Simulated corporate workstations and servers</li>
+                <li><strong>DMZ VM:</strong> Hosted public-facing services (web server, mail server)</li>
+                <li><strong>Attacker VM:</strong> Used for generating various types of network attacks</li>
+                <li><strong>Management VM:</strong> Centralized monitoring and rule management</li>
+            </ul>
+
+            <div class="demo-screenshot">
+                <h3>Network Architecture</h3>
+                <p><em>Multi-VM environment with Snort IDS deployed on gateway machine</em></p>
+                <p>• Gateway VM: Snort IDS + Firewall</p>
+                <p>• Internal Network: Workstations + Servers</p>
+                <p>• DMZ: Public Services</p>
+                <p>• Attacker VM: Threat Simulation</p>
+                <p>• Management VM: Monitoring & Control</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Snort Implementation</h2>
+            
+            <h3>Snort Configuration</h3>
+            <p>
+                Snort was configured as a network-based intrusion detection system running in inline mode on the 
+                gateway VM. The configuration included custom rule sets, logging mechanisms, and alert systems 
+                for comprehensive threat monitoring.
+            </p>
+
+            <h3>Custom Rule Development</h3>
+            <p>
+                Developed and tested custom Snort rules to detect specific attack patterns and network anomalies. 
+                These rules were designed to identify various types of network-based attacks and suspicious activities.
+            </p>
+
+            <div class="attack-grid">
+                <div class="attack-card">
+                    <h4>SYN Flood Attacks</h4>
+                    <p>Detection of TCP SYN flood attacks targeting network services.</p>
+                    <ul>
+                        <li>High SYN packet rate detection</li>
+                        <li>Source IP analysis</li>
+                        <li>Connection state monitoring</li>
+                        <li>Rate limiting implementation</li>
+                    </ul>
+                </div>
+
+                <div class="attack-card">
+                    <h4>Smurf Attacks</h4>
+                    <p>Identification of ICMP-based amplification attacks.</p>
+                    <ul>
+                        <li>ICMP echo request analysis</li>
+                        <li>Broadcast address monitoring</li>
+                        <li>Response rate calculation</li>
+                        <li>Source address validation</li>
+                    </ul>
+                </div>
+
+                <div class="attack-card">
+                    <h4>LAND Attacks</h4>
+                    <p>Detection of TCP packets with identical source and destination addresses.</p>
+                    <ul>
+                        <li>Address spoofing detection</li>
+                        <li>TCP header analysis</li>
+                        <li>Loopback traffic monitoring</li>
+                        <li>Protocol anomaly detection</li>
+                    </ul>
+                </div>
+
+                <div class="attack-card">
+                    <h4>UDP Flood Attacks</h4>
+                    <p>Monitoring of UDP-based denial of service attacks.</p>
+                    <ul>
+                        <li>UDP packet rate analysis</li>
+                        <li>Port scanning detection</li>
+                        <li>Bandwidth utilization monitoring</li>
+                        <li>Service availability tracking</li>
+                    </ul>
+                </div>
+
+                <div class="attack-card">
+                    <h4>TCP Scan Detection</h4>
+                    <p>Identification of various TCP scanning techniques.</p>
+                    <ul>
+                        <li>ACK scan detection</li>
+                        <li>FIN scan monitoring</li>
+                        <li>Xmas scan analysis</li>
+                        <li>Null scan identification</li>
+                    </ul>
+                </div>
+
+                <div class="attack-card">
+                    <h4>Port Scanning</h4>
+                    <p>Comprehensive port scanning activity detection.</p>
+                    <ul>
+                        <li>Multiple port access patterns</li>
+                        <li>Time-based analysis</li>
+                        <li>Source IP correlation</li>
+                        <li>Service enumeration detection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Attack Simulation & Testing</h2>
+            
+            <h3>Threat Simulation Environment</h3>
+            <p>
+                Created a comprehensive testing environment using the attacker VM to generate various types of 
+                network attacks. This allowed for validation of detection rules and analysis of system response 
+                to different threat scenarios.
+            </p>
+
+            <h3>Attack Categories Tested</h3>
+            <ul>
+                <li><strong>Denial of Service (DoS):</strong> SYN floods, UDP floods, Smurf attacks</li>
+                <li><strong>Network Scanning:</strong> Port scans, service enumeration, vulnerability scanning</li>
+                <li><strong>Protocol Anomalies:</strong> Malformed packets, protocol violations, header manipulation</li>
+                <li><strong>Traffic Analysis:</strong> Unusual traffic patterns, bandwidth anomalies, connection analysis</li>
+            </ul>
+
+            <h3>Detection Validation</h3>
+            <p>
+                Each attack type was systematically tested to validate detection capabilities, measure false 
+                positive rates, and optimize rule performance. This process ensured reliable threat detection 
+                while minimizing false alarms.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Testing Methodology:</h3>
+                <ul>
+                    <li>Controlled attack generation with known parameters</li>
+                    <li>Real-time monitoring of Snort alerts and logs</li>
+                    <li>Analysis of detection accuracy and response times</li>
+                    <li>Performance impact assessment on network throughput</li>
+                    <li>Rule optimization based on testing results</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Network Forensics & Analysis</h2>
+            
+            <h3>Packet Analysis</h3>
+            <p>
+                Implemented comprehensive packet capture and analysis capabilities to examine network traffic 
+                in detail. This included protocol analysis, payload inspection, and traffic pattern recognition.
+            </p>
+
+            <h3>Log Analysis & Correlation</h3>
+            <ul>
+                <li><strong>Snort Alert Analysis:</strong> Review and classification of security alerts</li>
+                <li><strong>Traffic Pattern Recognition:</strong> Identification of normal vs. anomalous traffic</li>
+                <li><strong>Source Attribution:</strong> Tracing attack sources and understanding attack vectors</li>
+                <li><strong>Impact Assessment:</strong> Evaluating the potential impact of detected threats</li>
+            </ul>
+
+            <h3>Incident Response Procedures</h3>
+            <p>
+                Developed and tested incident response procedures for various attack scenarios, including 
+                alert triage, threat assessment, and response coordination across the virtual network environment.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Challenges & Solutions</h2>
+            
+            <h3>Challenge 1: Virtual Network Configuration</h3>
+            <p><strong>Problem:</strong> Setting up complex network topology with multiple VMs and proper routing.</p>
+            <p><strong>Solution:</strong> Used VMware networking features to create isolated network segments with proper routing tables and firewall rules.</p>
+
+            <h3>Challenge 2: Snort Rule Optimization</h3>
+            <p><strong>Problem:</strong> Balancing detection accuracy with system performance and false positive rates.</p>
+            <p><strong>Solution:</strong> Implemented rule tuning based on testing results, using threshold values and rate limiting to optimize performance.</p>
+
+            <h3>Challenge 3: Attack Simulation</h3>
+            <p><strong>Problem:</strong> Generating realistic attack traffic for testing without affecting system stability.</p>
+            <p><strong>Solution:</strong> Used specialized tools like hping3, nmap, and custom scripts to generate controlled attack traffic with precise parameters.</p>
+
+            <h3>Challenge 4: Log Management</h3>
+            <p><strong>Problem:</strong> Managing large volumes of log data and alerts from multiple sources.</p>
+            <p><strong>Solution:</strong> Implemented centralized logging with log rotation, filtering, and automated analysis tools for efficient log management.</p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Learning Outcomes</h2>
+            
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">Multi-VM</div>
+                    <div class="metric-label">Environment Setup</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Custom</div>
+                    <div class="metric-label">Snort Rules</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">6+</div>
+                    <div class="metric-label">Attack Types</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Real-time</div>
+                    <div class="metric-label">Threat Detection</div>
+                </div>
+            </div>
+
+            <h3>Technical Skills Developed</h3>
+            <ul>
+                <li><strong>Network Security:</strong> Deep understanding of network threats and defense mechanisms</li>
+                <li><strong>Virtualization:</strong> Multi-VM environment setup and network configuration</li>
+                <li><strong>Snort Administration:</strong> Installation, configuration, and rule development</li>
+                <li><strong>Packet Analysis:</strong> Network traffic examination and protocol analysis</li>
+                <li><strong>Incident Response:</strong> Security event handling and response procedures</li>
+            </ul>
+
+            <h3>Practical Experience</h3>
+            <p>
+                This project provided hands-on experience with enterprise-grade security tools and real-world 
+                network defense scenarios. The multi-VM environment closely resembled actual enterprise 
+                network architectures, providing valuable practical experience.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Future Enhancements</h2>
+            
+            <h3>Phase 2: Advanced Features</h3>
+            <ul>
+                <li><strong>SIEM Integration:</strong> Connect Snort with Security Information and Event Management systems</li>
+                <li><strong>Machine Learning:</strong> Implement ML-based anomaly detection for unknown threats</li>
+                <li><strong>Automated Response:</strong> Develop automated incident response capabilities</li>
+                <li><strong>Threat Intelligence:</strong> Integrate with threat intelligence feeds for enhanced detection</li>
+            </ul>
+
+            <h3>Phase 3: Enterprise Features</h3>
+            <ul>
+                <li><strong>Distributed Deployment:</strong> Multi-site IDS deployment with centralized management</li>
+                <li><strong>Advanced Analytics:</strong> Threat trend analysis and predictive modeling</li>
+                <li><strong>Compliance Reporting:</strong> Generate reports for regulatory compliance requirements</li>
+                <li><strong>API Development:</strong> RESTful API for integration with other security tools</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Lessons Learned</h2>
+            
+            <p>
+                This project reinforced several critical principles in network security and intrusion detection:
+            </p>
+            
+            <ul>
+                <li><strong>Defense in Depth:</strong> Multiple layers of security provide better protection</li>
+                <li><strong>Rule Tuning is Critical:</strong> Proper rule configuration significantly impacts detection accuracy</li>
+                <li><strong>Monitoring is Essential:</strong> Continuous monitoring and analysis are key to threat detection</li>
+                <li><strong>Testing is Vital:</strong> Regular testing and validation ensure system effectiveness</li>
+                <li><strong>Documentation Matters:</strong> Comprehensive documentation aids in incident response and system maintenance</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Conclusion</h2>
+            
+            <p>
+                The Network Intrusion Detection System project provided comprehensive hands-on experience with 
+                enterprise-grade network security tools and real-world threat detection scenarios. By building 
+                a multi-VM environment and implementing Snort with custom rules, this project demonstrated 
+                practical skills in network security, threat analysis, and incident response.
+            </p>
+            
+            <p>
+                The experience gained from this project is directly applicable to enterprise security roles, 
+                providing valuable insights into network defense strategies, threat detection methodologies, 
+                and security infrastructure management. The hands-on approach to learning network security 
+                concepts through practical implementation enhances understanding and prepares for real-world 
+                cybersecurity challenges.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

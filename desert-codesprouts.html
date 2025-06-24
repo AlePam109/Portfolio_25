@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desert CodeSprouts - Cybersecurity Education | Alec Pham</title>
+    <meta name="description" content="A detailed case study of Desert CodeSprouts - an interactive cybersecurity education game teaching the CIA Triad">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project-specific customizations can be added here if needed */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Alec.</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="case-study">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header">
+            <h1 class="case-study-title">Desert CodeSprouts</h1>
+            <p class="case-study-subtitle">Interactive Cybersecurity Education Through Gamified Learning</p>
+            <div class="tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">Cybersecurity</span>
+                <span class="tech-tag">Education</span>
+                <span class="tech-tag">Pyodide</span>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Project Overview</h2>
+            <p>
+                Desert CodeSprouts is an innovative browser-based cybersecurity education platform designed to teach 
+                fundamental security concepts through interactive, hands-on activities. The project focuses on explaining 
+                the CIA Triad (Confidentiality, Integrity, Availability) through three engaging modules that simulate 
+                real-world cybersecurity challenges.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>Educational Mission:</h3>
+                <p>
+                    Make cybersecurity concepts accessible and engaging for students of all ages by transforming 
+                    complex security principles into interactive, gamified learning experiences that provide immediate 
+                    feedback and hands-on practice.
+                </p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Implementation</h2>
+            
+            <h3>Architecture Overview</h3>
+            <p>
+                The application is built as a single-page web application using vanilla JavaScript, HTML, and CSS, 
+                with a Python sandbox powered by Pyodide for safe code execution in the browser.
+            </p>
+
+            <h3>Core Components</h3>
+            <ul>
+                <li><strong>Interactive Modules:</strong> Three distinct learning activities covering different aspects of the CIA Triad</li>
+                <li><strong>Python Sandbox:</strong> Safe code execution environment using Pyodide for hands-on programming</li>
+                <li><strong>Visual Effects:</strong> Matrix-style digital rain animation for immersive cybersecurity theme</li>
+                <li><strong>Progress Tracking:</strong> Real-time feedback and scoring system for learning assessment</li>
+                <li><strong>Responsive Design:</strong> Cross-platform compatibility for various devices and screen sizes</li>
+            </ul>
+
+            <h3>Learning Modules</h3>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h4>1. Substitution Cipher Breaking</h4>
+                    <p><strong>Concept:</strong> Confidentiality</p>
+                    <p>Students learn frequency analysis techniques to break simple substitution ciphers, understanding how encryption protects information confidentiality.</p>
+                    <ul>
+                        <li>Interactive cipher text input</li>
+                        <li>Real-time frequency analysis</li>
+                        <li>Step-by-step decryption guidance</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card">
+                    <h4>2. Hash Collision Detection</h4>
+                    <p><strong>Concept:</strong> Integrity</p>
+                    <p>Participants explore hash functions and learn to find collisions, demonstrating how cryptographic hashes ensure data integrity.</p>
+                    <ul>
+                        <li>Hash function experimentation</li>
+                        <li>Collision finding challenges</li>
+                        <li>Integrity verification exercises</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card">
+                    <h4>3. DDoS Attack Simulation</h4>
+                    <p><strong>Concept:</strong> Availability</p>
+                    <p>Students simulate and mitigate DDoS attacks, learning about service availability and defense mechanisms.</p>
+                    <ul>
+                        <li>Attack simulation environment</li>
+                        <li>Rate limiting implementation</li>
+                        <li>Defense strategy development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Key Features & Innovations</h2>
+            
+            <h3>Python Sandbox Integration</h3>
+            <p>
+                One of the most innovative aspects of Desert CodeSprouts is the integration of Pyodide, which allows 
+                students to write and execute Python code directly in the browser. This provides a safe, controlled 
+                environment for learning cybersecurity concepts through hands-on programming.
+            </p>
+
+            <h3>Matrix-Style Visual Effects</h3>
+            <p>
+                The application features a custom JavaScript module that creates Matrix-style digital rain effects 
+                rendered on HTML canvas, enhancing the cybersecurity theme and creating an immersive learning environment.
+            </p>
+
+            <h3>Progressive Learning Design</h3>
+            <p>
+                Each module builds upon the previous one, creating a natural progression through cybersecurity concepts. 
+                Students start with basic encryption, move to data integrity, and finally explore availability challenges.
+            </p>
+
+            <div class="demo-screenshot">
+                <h3>Interactive Learning Interface</h3>
+                <p><em>Students can experiment with Python code in a safe sandbox environment</em></p>
+                <p>• Real-time code execution feedback</p>
+                <p>• Visual representation of cryptographic concepts</p>
+                <p>• Progressive difficulty levels</p>
+                <p>• Immediate scoring and assessment</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Educational Impact</h2>
+            
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">3</div>
+                    <div class="metric-label">Core Learning Modules</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">100%</div>
+                    <div class="metric-label">Browser-Based</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Interactive</div>
+                    <div class="metric-label">Hands-on Learning</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Safe</div>
+                    <div class="metric-label">Sandboxed Environment</div>
+                </div>
+            </div>
+
+            <h3>Learning Objectives</h3>
+            <ul>
+                <li><strong>Understand the CIA Triad:</strong> Comprehensive coverage of Confidentiality, Integrity, and Availability</li>
+                <li><strong>Practical Cryptography:</strong> Hands-on experience with encryption and hashing</li>
+                <li><strong>Threat Awareness:</strong> Real-world understanding of cybersecurity threats and defenses</li>
+                <li><strong>Problem-Solving Skills:</strong> Critical thinking through interactive challenges</li>
+                <li><strong>Programming Fundamentals:</strong> Python coding in a cybersecurity context</li>
+            </ul>
+
+            <h3>Target Audience</h3>
+            <p>
+                While designed for younger audiences, the modular approach and adjustable difficulty levels make 
+                Desert CodeSprouts suitable for students of various ages and skill levels, from middle school 
+                to early college students interested in cybersecurity.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Challenges & Solutions</h2>
+            
+            <h3>Challenge 1: Safe Code Execution</h3>
+            <p><strong>Problem:</strong> Need to allow students to run Python code without security risks.</p>
+            <p><strong>Solution:</strong> Implemented Pyodide for browser-based Python execution with restricted access to system resources.</p>
+
+            <h3>Challenge 2: Interactive Learning Design</h3>
+            <p><strong>Problem:</strong> Making complex cybersecurity concepts accessible to younger learners.</p>
+            <p><strong>Solution:</strong> Created gamified modules with progressive difficulty and immediate feedback systems.</p>
+
+            <h3>Challenge 3: Cross-Platform Compatibility</h3>
+            <p><strong>Problem:</strong> Ensuring the application works consistently across different devices and browsers.</p>
+            <p><strong>Solution:</strong> Used vanilla JavaScript and responsive design principles for maximum compatibility.</p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Future Enhancements</h2>
+            
+            <h3>Phase 2: Advanced Features</h3>
+            <ul>
+                <li><strong>Additional Modules:</strong> Expand to cover more cybersecurity concepts (authentication, authorization, etc.)</li>
+                <li><strong>Multiplayer Mode:</strong> Collaborative learning experiences and competitions</li>
+                <li><strong>Progress Tracking:</strong> User accounts and learning analytics</li>
+                <li><strong>Custom Challenges:</strong> Allow educators to create custom learning scenarios</li>
+            </ul>
+
+            <h3>Phase 3: Educational Integration</h3>
+            <ul>
+                <li><strong>LMS Integration:</strong> Connect with learning management systems</li>
+                <li><strong>Assessment Tools:</strong> Automated grading and progress reporting</li>
+                <li><strong>Teacher Dashboard:</strong> Analytics and student progress monitoring</li>
+                <li><strong>Mobile App:</strong> Native mobile application for increased accessibility</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Lessons Learned</h2>
+            
+            <p>
+                This project reinforced several important principles in educational technology development:
+            </p>
+            
+            <ul>
+                <li><strong>Engagement is Key:</strong> Interactive elements significantly improve learning outcomes</li>
+                <li><strong>Safety First:</strong> Educational tools must prioritize student safety and data protection</li>
+                <li><strong>Progressive Design:</strong> Building complexity gradually helps maintain student interest</li>
+                <li><strong>Immediate Feedback:</strong> Real-time responses enhance the learning experience</li>
+                <li><strong>Accessibility Matters:</strong> Cross-platform compatibility ensures broader reach</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Conclusion</h2>
+            
+            <p>
+                Desert CodeSprouts successfully demonstrates how gamification and interactive technology can make 
+                complex cybersecurity concepts accessible and engaging for students. By combining hands-on programming 
+                with visual learning elements, the project creates an effective educational tool that bridges the gap 
+                between theoretical knowledge and practical application.
+            </p>
+            
+            <p>
+                The integration of Python sandboxing and Matrix-style visual effects showcases innovative approaches 
+                to cybersecurity education, while the modular design allows for future expansion and customization. 
+                This project represents a valuable contribution to cybersecurity education and demonstrates the potential 
+                for technology-enhanced learning in technical fields.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

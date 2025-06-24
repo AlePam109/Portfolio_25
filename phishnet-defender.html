@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishNet Defender - Cybersecurity Case Study | Alec Pham</title>
+    <meta name="description" content="A detailed case study of PhishNet Defender - a phishing detection and response simulation tool for small and mid-sized businesses">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project-specific customizations can be added here if needed */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Alec.</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="case-study">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header">
+            <h1 class="case-study-title">PhishNet Defender</h1>
+            <p class="case-study-subtitle">Simulating SOC Workflows for Phishing Detection in Small Business Environments</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">Email Security</span>
+                <span class="tech-tag">SOC Workflow</span>
+                <span class="tech-tag">Threat Analysis</span>
+                <span class="tech-tag">Incident Response</span>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Problem Statement</h2>
+            <p>
+                Business Email Compromise (BEC) attacks have become one of the most costly cyber threats globally, 
+                with losses exceeding $2.7 billion in 2022 alone. Small and mid-sized businesses (SMBs) are particularly 
+                vulnerable due to limited cybersecurity resources and lack of dedicated security teams.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>Key Challenges for SMBs:</h3>
+                <ul>
+                    <li><strong>Limited Resources:</strong> No dedicated SOC teams or security analysts</li>
+                    <li><strong>Cost Constraints:</strong> Expensive enterprise security tools are out of reach</li>
+                    <li><strong>Skill Gap:</strong> Limited cybersecurity expertise among staff</li>
+                    <li><strong>Response Time:</strong> Delayed detection and response to phishing attempts</li>
+                </ul>
+            </div>
+
+            <p>
+                The goal of PhishNet Defender is to provide SMBs with an affordable, accessible tool that simulates 
+                enterprise-grade phishing detection and response workflows, enabling proactive defense against BEC attacks.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Approach</h2>
+            
+            <h3>Detection Methodology</h3>
+            <p>
+                PhishNet Defender implements a multi-layered approach to phishing detection, combining traditional 
+                email security analysis with modern threat intelligence techniques.
+            </p>
+
+            <h3>1. Email Header Analysis</h3>
+            <ul>
+                <li><strong>SPF/DKIM Validation:</strong> Check sender authentication records</li>
+                <li><strong>Domain Reputation:</strong> Analyze sender domain against known malicious indicators</li>
+                <li><strong>Header Anomalies:</strong> Detect suspicious routing patterns and spoofing attempts</li>
+                <li><strong>Timestamp Analysis:</strong> Identify unusual sending times and geographic inconsistencies</li>
+            </ul>
+
+            <h3>2. Content Analysis</h3>
+            <ul>
+                <li><strong>URL Analysis:</strong> Check links against phishing databases and detect obfuscation</li>
+                <li><strong>Language Processing:</strong> Identify urgency indicators and social engineering tactics</li>
+                <li><strong>Attachment Scanning:</strong> Analyze file types and detect malicious payloads</li>
+                <li><strong>Sender Impersonation:</strong> Detect CEO fraud and vendor impersonation attempts</li>
+            </ul>
+
+            <h3>3. Threat Scoring System</h3>
+            <p>
+                The system uses a weighted scoring algorithm that evaluates multiple risk factors:
+            </p>
+            <ul>
+                <li><strong>High Risk (8-10):</strong> Multiple authentication failures + suspicious content</li>
+                <li><strong>Medium Risk (5-7):</strong> Single authentication failure or suspicious indicators</li>
+                <li><strong>Low Risk (1-4):</strong> Minor anomalies or false positives</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Implementation Details</h2>
+            
+            <h3>Architecture Overview</h3>
+            <p>
+                PhishNet Defender is built as a web-based application using Flask, providing an intuitive interface 
+                for email analysis and incident response simulation.
+            </p>
+
+            <div class="demo-screenshot">
+                <h3>System Architecture</h3>
+                <p>Flask Web Application → Email Parser → Threat Analyzer → SOC Workflow Engine → Report Generator</p>
+            </div>
+
+            <h3>Key Components</h3>
+            <ul>
+                <li><strong>Email Parser:</strong> Extracts headers, body content, and attachments from .eml files</li>
+                <li><strong>Threat Analyzer:</strong> Implements detection rules and scoring algorithms</li>
+                <li><strong>SOC Workflow Engine:</strong> Simulates analyst investigation and response procedures</li>
+                <li><strong>Report Generator:</strong> Creates detailed incident reports and threat timelines</li>
+                <li><strong>Dashboard:</strong> Visualizes threat metrics and response activities</li>
+            </ul>
+
+            <h3>Data Sources</h3>
+            <ul>
+                <li><strong>PhishTank API:</strong> Real-time phishing URL database</li>
+                <li><strong>VirusTotal API:</strong> File and URL reputation checking</li>
+                <li><strong>Public .eml Repositories:</strong> Sample phishing emails for testing</li>
+                <li><strong>Custom Indicators:</strong> Known BEC patterns and tactics</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Demo Output & Screenshots</h2>
+            
+            <h3>Email Analysis Dashboard</h3>
+            <div class="demo-screenshot">
+                <p><em>Dashboard showing flagged email with threat score and analysis results</em></p>
+                <p>• Threat Score: 8.5/10 (High Risk)</p>
+                <p>• SPF Failure Detected</p>
+                <p>• Suspicious URL: bit.ly/2x3y4z5</p>
+                <p>• Urgency Indicators: "Immediate action required"</p>
+            </div>
+
+            <h3>SOC Analyst Workflow</h3>
+            <div class="demo-screenshot">
+                <p><em>Step-by-step investigation workflow for analysts</em></p>
+                <p>1. Alert Classification: Phishing Attempt</p>
+                <p>2. Investigation Steps: Header analysis, content review, URL checking</p>
+                <p>3. Recommended Actions: Block sender, quarantine email, notify users</p>
+                <p>4. Incident Report Generation</p>
+            </div>
+
+            <h3>Generated Incident Report</h3>
+            <div class="demo-screenshot">
+                <p><em>Automated PDF report with threat timeline and response recommendations</em></p>
+                <p>• Incident ID: PHISH-2025-001</p>
+                <p>• Detection Time: 2025-01-15 14:30:00 UTC</p>
+                <p>• Threat Type: Business Email Compromise</p>
+                <p>• Impact Assessment: High</p>
+                <p>• Response Timeline: 15 minutes</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Impact & Business Value</h2>
+            
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">90%</div>
+                    <div class="metric-label">Detection Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">15min</div>
+                    <div class="metric-label">Response Time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">$50K</div>
+                    <div class="metric-label">Potential Savings</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">24/7</div>
+                    <div class="metric-label">Monitoring</div>
+                </div>
+            </div>
+
+            <h3>Real-World Applications</h3>
+            <ul>
+                <li><strong>Security Awareness Training:</strong> Interactive phishing simulation for employees</li>
+                <li><strong>SOC Intern Onboarding:</strong> Hands-on training for new security analysts</li>
+                <li><strong>Incident Response Practice:</strong> Mock scenarios for response team training</li>
+                <li><strong>Vendor Security Assessment:</strong> Evaluate email security posture of business partners</li>
+            </ul>
+
+            <h3>Cost-Benefit Analysis</h3>
+            <p>
+                For a typical SMB with 50 employees, implementing PhishNet Defender could prevent an average 
+                BEC attack costing $50,000, providing a significant return on investment compared to enterprise 
+                security solutions that cost $100,000+ annually.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Challenges & Solutions</h2>
+            
+            <h3>Challenge 1: Email Parsing Complexity</h3>
+            <p><strong>Problem:</strong> Email headers contain complex routing information and multiple authentication records.</p>
+            <p><strong>Solution:</strong> Implemented a robust parser using Python's email library with custom validation logic for SPF, DKIM, and DMARC records.</p>
+
+            <h3>Challenge 2: False Positive Reduction</h3>
+            <p><strong>Problem:</strong> Initial detection rules generated too many false positives, reducing system credibility.</p>
+            <p><strong>Solution:</strong> Developed a weighted scoring system that considers multiple factors and requires multiple indicators for high-risk classification.</p>
+
+            <h3>Challenge 3: Real-time Threat Intelligence</h3>
+            <p><strong>Problem:</strong> Static threat databases become outdated quickly.</p>
+            <p><strong>Solution:</strong> Integrated multiple APIs (PhishTank, VirusTotal) and implemented caching to balance accuracy with performance.</p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Future Enhancements</h2>
+            
+            <h3>Phase 2: Advanced Features</h3>
+            <ul>
+                <li><strong>Machine Learning Integration:</strong> Implement ML models for improved detection accuracy</li>
+                <li><strong>Real-time Alerting:</strong> Add email integration for live monitoring</li>
+                <li><strong>SIEM Integration:</strong> Connect with open-source SIEM solutions like ELK Stack</li>
+                <li><strong>LLM Integration:</strong> Use AI to explain threat reasoning and generate response recommendations</li>
+            </ul>
+
+            <h3>Phase 3: Enterprise Features</h3>
+            <ul>
+                <li><strong>Multi-tenant Architecture:</strong> Support for multiple organizations</li>
+                <li><strong>API Development:</strong> RESTful API for third-party integrations</li>
+                <li><strong>Advanced Analytics:</strong> Threat trend analysis and predictive modeling</li>
+                <li><strong>Compliance Reporting:</strong> Generate reports for regulatory requirements</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Lessons Learned</h2>
+            
+            <p>
+                This project reinforced several key principles in cybersecurity development:
+            </p>
+            
+            <ul>
+                <li><strong>User Experience Matters:</strong> Even technical tools need intuitive interfaces for adoption</li>
+                <li><strong>False Positives Kill Credibility:</strong> Accuracy is more important than detection volume</li>
+                <li><strong>Documentation is Critical:</strong> Clear incident reports help with training and compliance</li>
+                <li><strong>Scalability Planning:</strong> Design for growth from the beginning</li>
+                <li><strong>Real-world Testing:</strong> Validate against actual phishing campaigns, not just theory</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Conclusion</h2>
+            
+            <p>
+                PhishNet Defender demonstrates how practical cybersecurity solutions can be developed to address 
+                real-world problems faced by small and mid-sized businesses. By combining traditional email 
+                security analysis with modern threat intelligence and user-friendly interfaces, we can create 
+                tools that bridge the gap between enterprise-grade security and SMB resource constraints.
+            </p>
+            
+            <p>
+                This project showcases not only technical skills in Python development and cybersecurity 
+                analysis, but also the ability to understand business needs and translate them into 
+                functional solutions that provide measurable value.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

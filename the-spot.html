@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spot - Business Review Application | Alec Pham</title>
+    <meta name="description" content="A detailed case study of The Spot - a Yelp-like web application for business reviews using Flask and PostgreSQL">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project-specific customizations can be added here if needed */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Alec.</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="case-study">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header">
+            <h1 class="case-study-title">The Spot</h1>
+            <p class="case-study-subtitle">Yelp-Like Business Review Web Application</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Yelp Dataset</span>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Project Overview</h2>
+            <p>
+                The Spot is a comprehensive web application that enables users to browse, search, and review local 
+                businesses using real-world data from the Yelp Open Dataset. The project demonstrates full-stack 
+                web development skills, database management, and user experience design in a practical, real-world context.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>Key Objectives:</h3>
+                <ul>
+                    <li>Create a functional business review platform similar to Yelp</li>
+                    <li>Implement robust user authentication and authorization</li>
+                    <li>Design efficient database schema and data management</li>
+                    <li>Provide intuitive search and filtering capabilities</li>
+                    <li>Handle large-scale real-world datasets effectively</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Architecture</h2>
+            
+            <h3>Backend Framework</h3>
+            <p>
+                Built using Flask, a lightweight Python web framework that provides flexibility and control over 
+                the application structure. The choice of Flask allows for rapid development while maintaining 
+                clean, maintainable code architecture.
+            </p>
+
+            <h3>Database Design</h3>
+            <p>
+                PostgreSQL serves as the primary database, chosen for its robustness, ACID compliance, and 
+                excellent performance with complex queries. The database schema is designed to efficiently 
+                handle business information, user data, and review relationships.
+            </p>
+
+            <h3>Frontend Technologies</h3>
+            <p>
+                The user interface is built with HTML, CSS, and JavaScript, focusing on responsive design 
+                and intuitive user experience. The frontend communicates with the backend through RESTful 
+                API endpoints for seamless data interaction.
+            </p>
+
+            <div class="demo-screenshot">
+                <h3>Application Architecture</h3>
+                <p><em>Flask Backend → PostgreSQL Database → HTML/CSS/JS Frontend</em></p>
+                <p>• RESTful API design for data communication</p>
+                <p>• Responsive web interface for all devices</p>
+                <p>• Secure user authentication system</p>
+                <p>• Efficient database querying and optimization</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Core Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>User Authentication</h4>
+                    <p>Secure user registration and login system with session management and password hashing for data security.</p>
+                    <ul>
+                        <li>User registration and login</li>
+                        <li>Session management</li>
+                        <li>Password security</li>
+                        <li>Profile management</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Business Management</h4>
+                    <p>Comprehensive business listing system with detailed information, categories, and location data.</p>
+                    <ul>
+                        <li>Business profiles and details</li>
+                        <li>Category classification</li>
+                        <li>Location and contact info</li>
+                        <li>Business search and filtering</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Review System</h4>
+                    <p>Full CRUD operations for reviews including rating, text content, and helpfulness voting.</p>
+                    <ul>
+                        <li>Create, read, update, delete reviews</li>
+                        <li>Star rating system</li>
+                        <li>Review helpfulness voting</li>
+                        <li>Review moderation features</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Search & Filtering</h4>
+                    <p>Advanced search capabilities with multiple filter options for finding relevant businesses.</p>
+                    <ul>
+                        <li>Text-based search</li>
+                        <li>Category filtering</li>
+                        <li>Rating filtering</li>
+                        <li>Location-based search</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Data Management</h2>
+            
+            <h3>Yelp Open Dataset Integration</h3>
+            <p>
+                The application utilizes the Yelp Open Dataset, which contains millions of business listings, 
+                reviews, and user data. This real-world dataset provides authentic data for testing and 
+                demonstrating the application's capabilities.
+            </p>
+
+            <h3>Database Schema Design</h3>
+            <ul>
+                <li><strong>Users Table:</strong> User accounts, authentication data, and profile information</li>
+                <li><strong>Businesses Table:</strong> Business listings with categories, location, and contact details</li>
+                <li><strong>Reviews Table:</strong> User reviews with ratings, text content, and timestamps</li>
+                <li><strong>Categories Table:</strong> Business categories and classification system</li>
+                <li><strong>Helpful_Votes Table:</strong> Review helpfulness voting system</li>
+            </ul>
+
+            <h3>Data Ingestion Process</h3>
+            <p>
+                Implemented a robust data ingestion pipeline that processes the Yelp dataset, normalizes 
+                the data, and populates the PostgreSQL database efficiently. The process handles data 
+                validation, error correction, and relationship mapping.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Database Optimization:</h3>
+                <ul>
+                    <li>Indexed search fields for fast query performance</li>
+                    <li>Normalized schema design to reduce data redundancy</li>
+                    <li>Efficient JOIN operations for complex queries</li>
+                    <li>Connection pooling for improved scalability</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>User Experience Design</h2>
+            
+            <h3>Responsive Design</h3>
+            <p>
+                The application features a responsive design that works seamlessly across desktop, tablet, 
+                and mobile devices. The interface adapts to different screen sizes while maintaining 
+                functionality and visual appeal.
+            </p>
+
+            <h3>Intuitive Navigation</h3>
+            <ul>
+                <li><strong>Clear Information Hierarchy:</strong> Logical organization of business information and reviews</li>
+                <li><strong>Search Functionality:</strong> Prominent search bar with autocomplete suggestions</li>
+                <li><strong>Filter Options:</strong> Easy-to-use filtering system for refining search results</li>
+                <li><strong>User Feedback:</strong> Clear success/error messages and loading indicators</li>
+            </ul>
+
+            <h3>Performance Optimization</h3>
+            <p>
+                The application is optimized for performance with efficient database queries, caching 
+                strategies, and optimized frontend assets. This ensures fast loading times and smooth 
+                user interactions even with large datasets.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Challenges & Solutions</h2>
+            
+            <h3>Challenge 1: Large Dataset Management</h3>
+            <p><strong>Problem:</strong> Handling millions of records from the Yelp dataset efficiently.</p>
+            <p><strong>Solution:</strong> Implemented database indexing, query optimization, and pagination to manage large datasets effectively.</p>
+
+            <h3>Challenge 2: Search Performance</h3>
+            <p><strong>Problem:</strong> Fast search functionality across multiple fields and categories.</p>
+            <p><strong>Solution:</strong> Created composite indexes and implemented efficient search algorithms with proper query optimization.</p>
+
+            <h3>Challenge 3: User Authentication Security</h3>
+            <p><strong>Problem:</strong> Secure user authentication and session management.</p>
+            <p><strong>Solution:</strong> Implemented password hashing, secure session handling, and proper input validation to prevent security vulnerabilities.</p>
+
+            <h3>Challenge 4: Data Consistency</h3>
+            <p><strong>Problem:</strong> Maintaining data integrity across related tables and operations.</p>
+            <p><strong>Solution:</strong> Used database transactions, foreign key constraints, and proper error handling to ensure data consistency.</p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Project Impact</h2>
+            
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">Full-Stack</div>
+                    <div class="metric-label">Web Development</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Real-World</div>
+                    <div class="metric-label">Dataset Integration</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">CRUD</div>
+                    <div class="metric-label">Operations</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Responsive</div>
+                    <div class="metric-label">Design</div>
+                </div>
+            </div>
+
+            <h3>Learning Outcomes</h3>
+            <ul>
+                <li><strong>Full-Stack Development:</strong> Complete web application development from database to frontend</li>
+                <li><strong>Database Design:</strong> Schema design, optimization, and management of large datasets</li>
+                <li><strong>API Development:</strong> RESTful API design and implementation</li>
+                <li><strong>User Experience:</strong> Responsive design and intuitive interface development</li>
+                <li><strong>Data Processing:</strong> Large-scale data ingestion and management</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Future Enhancements</h2>
+            
+            <h3>Phase 2: Advanced Features</h3>
+            <ul>
+                <li><strong>Recommendation System:</strong> AI-powered business recommendations based on user preferences</li>
+                <li><strong>Advanced Analytics:</strong> Business insights and trend analysis</li>
+                <li><strong>Mobile Application:</strong> Native mobile app for iOS and Android</li>
+                <li><strong>Social Features:</strong> User following, activity feeds, and social interactions</li>
+            </ul>
+
+            <h3>Phase 3: Enterprise Features</h3>
+            <ul>
+                <li><strong>Business Dashboard:</strong> Analytics and management tools for business owners</li>
+                <li><strong>Review Moderation:</strong> Advanced content moderation and spam detection</li>
+                <li><strong>API Access:</strong> Public API for third-party integrations</li>
+                <li><strong>Scalability Improvements:</strong> Microservices architecture and cloud deployment</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Lessons Learned</h2>
+            
+            <p>
+                This project provided valuable insights into full-stack web development and database management:
+            </p>
+            
+            <ul>
+                <li><strong>Database Design is Critical:</strong> Proper schema design significantly impacts application performance</li>
+                <li><strong>User Experience Matters:</strong> Intuitive interfaces improve user engagement and satisfaction</li>
+                <li><strong>Performance Optimization:</strong> Early optimization prevents scalability issues</li>
+                <li><strong>Security is Paramount:</strong> Proper authentication and input validation are essential</li>
+                <li><strong>Real Data is Valuable:</strong> Working with real-world datasets provides authentic development experience</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Conclusion</h2>
+            
+            <p>
+                The Spot successfully demonstrates comprehensive full-stack web development skills, from 
+                database design and backend API development to frontend user interface creation. The project 
+                showcases the ability to work with large-scale real-world datasets and create functional, 
+                user-friendly web applications.
+            </p>
+            
+            <p>
+                By implementing a complete business review platform with authentication, search, and review 
+                functionality, this project provides a solid foundation for understanding modern web application 
+                development. The use of Flask and PostgreSQL demonstrates proficiency with industry-standard 
+                technologies, while the responsive design and user experience considerations show attention to 
+                detail and user-centric development practices.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

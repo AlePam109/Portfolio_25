@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam Smart Irrigation System | Alec Pham</title>
+    <meta name="description" content="A detailed case study of an IoT-based smart irrigation system for Vietnam's agriculture sector">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Project-specific customizations can be added here if needed */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Alec.</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="case-study">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <div class="case-study-header">
+            <h1 class="case-study-title">Vietnam Smart Irrigation System</h1>
+            <p class="case-study-subtitle">IoT-Based Irrigation Optimization for Sustainable Agriculture</p>
+            <div class="tech-stack">
+                <span class="tech-tag">IoT</span>
+                <span class="tech-tag">Raspberry Pi</span>
+                <span class="tech-tag">Soil Sensors</span>
+                <span class="tech-tag">Data Analysis</span>
+                <span class="tech-tag">Agriculture</span>
+                <span class="tech-tag">Sustainability</span>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Project Overview</h2>
+            <p>
+                The Vietnam Smart Irrigation System is an innovative IoT-based solution designed to address water 
+                consumption challenges in Vietnam's agricultural sector. The system combines soil sensors, Raspberry 
+                Pi processing, and smart algorithms to provide real-time irrigation recommendations, optimizing 
+                water usage while maintaining crop health and productivity.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>Key Objectives:</h3>
+                <ul>
+                    <li>Reduce water consumption in agricultural irrigation by 30-40%</li>
+                    <li>Implement real-time soil moisture monitoring and analysis</li>
+                    <li>Develop intelligent irrigation scheduling algorithms</li>
+                    <li>Create a scalable IoT infrastructure for agricultural applications</li>
+                    <li>Provide data-driven insights for sustainable farming practices</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Problem Context</h2>
+            
+            <h3>Agricultural Water Challenges in Vietnam</h3>
+            <p>
+                Vietnam's agricultural sector faces significant challenges with water management, including 
+                inefficient irrigation practices, water scarcity in certain regions, and the need for sustainable 
+                farming methods. Traditional irrigation systems often lead to over-watering or under-watering, 
+                resulting in reduced crop yields and wasted resources.
+            </p>
+
+            <h3>Environmental Impact</h3>
+            <p>
+                Conventional irrigation methods contribute to water waste, soil degradation, and increased 
+                energy consumption. The smart irrigation system addresses these issues by providing precise, 
+                data-driven irrigation recommendations based on real-time environmental conditions.
+            </p>
+
+            <h3>Economic Considerations</h3>
+            <p>
+                Water is a critical resource for agricultural productivity, and optimizing its use can significantly 
+                impact farming costs and crop yields. The system aims to provide economic benefits through 
+                reduced water consumption and improved crop management.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>IoT Architecture</h2>
+            
+            <h3>System Components</h3>
+            <p>
+                The smart irrigation system consists of multiple interconnected components that work together 
+                to provide comprehensive irrigation management capabilities.
+            </p>
+
+            <div class="iot-architecture">
+                <h3>System Architecture</h3>
+                <div class="iot-component">
+                    <div class="iot-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div>
+                        <h4>Soil Sensors</h4>
+                        <p>Real-time monitoring of soil moisture, temperature, and pH levels</p>
+                    </div>
+                </div>
+                <div class="iot-component">
+                    <div class="iot-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div>
+                        <h4>Raspberry Pi Controller</h4>
+                        <p>Central processing unit for data collection and analysis</p>
+                    </div>
+                </div>
+                <div class="iot-component">
+                    <div class="iot-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div>
+                        <h4>Wi-Fi Communication</h4>
+                        <p>Wireless data transmission to cloud-based monitoring system</p>
+                    </div>
+                </div>
+                <div class="iot-component">
+                    <div class="iot-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div>
+                        <h4>Cloud Platform</h4>
+                        <p>Data storage, analysis, and remote monitoring capabilities</p>
+                    </div>
+                </div>
+                <div class="iot-component">
+                    <div class="iot-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div>
+                        <h4>Irrigation Control</h4>
+                        <p>Automated valve control based on smart recommendations</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Sensor Network</h3>
+            <div class="sensor-grid">
+                <div class="sensor-card">
+                    <h4>Soil Moisture Sensors</h4>
+                    <p>Capacitive sensors measuring volumetric water content</p>
+                </div>
+                <div class="sensor-card">
+                    <h4>Temperature Sensors</h4>
+                    <p>Digital temperature sensors for soil and ambient monitoring</p>
+                </div>
+                <div class="sensor-card">
+                    <h4>pH Sensors</h4>
+                    <p>Soil acidity measurement for optimal crop conditions</p>
+                </div>
+                <div class="sensor-card">
+                    <h4>Humidity Sensors</h4>
+                    <p>Atmospheric humidity monitoring for environmental context</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Core Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Real-Time Monitoring</h4>
+                    <p>Continuous monitoring of soil and environmental conditions.</p>
+                    <ul>
+                        <li>Soil moisture level tracking</li>
+                        <li>Temperature and humidity monitoring</li>
+                        <li>pH level measurement</li>
+                        <li>Environmental data collection</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Smart Algorithms</h4>
+                    <p>Intelligent irrigation scheduling and optimization.</p>
+                    <ul>
+                        <li>Machine learning-based recommendations</li>
+                        <li>Weather data integration</li>
+                        <li>Crop-specific irrigation patterns</li>
+                        <li>Predictive analytics for water needs</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Automated Control</h4>
+                    <p>Automated irrigation system management.</p>
+                    <ul>
+                        <li>Remote valve control</li>
+                        <li>Scheduled irrigation cycles</li>
+                        <li>Emergency shutdown capabilities</li>
+                        <li>Manual override options</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Data Analytics</h4>
+                    <p>Comprehensive data analysis and reporting.</p>
+                    <ul>
+                        <li>Historical data tracking</li>
+                        <li>Performance analytics</li>
+                        <li>Water usage optimization</li>
+                        <li>Crop yield correlation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Mobile Accessibility</h4>
+                    <p>Remote monitoring and control via mobile devices.</p>
+                    <ul>
+                        <li>Mobile app interface</li>
+                        <li>Real-time alerts and notifications</li>
+                        <li>Remote system control</li>
+                        <li>Offline data access</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h4>Scalable Design</h4>
+                    <p>Modular architecture for easy expansion.</p>
+                    <ul>
+                        <li>Modular sensor deployment</li>
+                        <li>Multi-field support</li>
+                        <li>Easy system expansion</li>
+                        <li>Compatible with existing infrastructure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Implementation</h2>
+            
+            <h3>Hardware Components</h3>
+            <ul>
+                <li><strong>Raspberry Pi 4:</strong> Central processing unit with 4GB RAM and quad-core processor</li>
+                <li><strong>Soil Moisture Sensors:</strong> Capacitive sensors with 0-100% measurement range</li>
+                <li><strong>Temperature Sensors:</strong> DS18B20 digital temperature sensors</li>
+                <li><strong>pH Sensors:</strong> Analog pH sensors with calibration capabilities</li>
+                <li><strong>Relay Modules:</strong> 8-channel relay board for valve control</li>
+                <li><strong>Wi-Fi Module:</strong> ESP8266 for wireless communication</li>
+            </ul>
+
+            <h3>Software Architecture</h3>
+            <p>
+                The system software consists of multiple layers including sensor data collection, data processing, 
+                algorithm implementation, and user interface development.
+            </p>
+
+            <h3>Data Processing Pipeline</h3>
+            <ul>
+                <li><strong>Data Collection:</strong> Continuous sensor data acquisition and validation</li>
+                <li><strong>Data Processing:</strong> Real-time analysis and filtering of sensor readings</li>
+                <li><strong>Algorithm Execution:</strong> Smart irrigation recommendation generation</li>
+                <li><strong>Control Output:</strong> Automated valve control and system management</li>
+                <li><strong>Data Storage:</strong> Local and cloud-based data logging</li>
+            </ul>
+
+            <div class="demo-screenshot">
+                <h3>System Interface</h3>
+                <p><em>Smart irrigation system dashboard with real-time monitoring and control</em></p>
+                <p>• Real-time sensor data display</p>
+                <p>• Irrigation scheduling interface</p>
+                <p>• Historical data visualization</p>
+                <p>• Mobile-responsive control panel</p>
+            </div>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Environmental Impact</h2>
+            
+            <div class="environmental-impact">
+                <h3>Sustainability Benefits</h3>
+                <p>
+                    The smart irrigation system provides significant environmental benefits through optimized 
+                    water usage and improved agricultural practices.
+                </p>
+                <ul>
+                    <li><strong>Water Conservation:</strong> 30-40% reduction in water consumption</li>
+                    <li><strong>Energy Efficiency:</strong> Reduced pumping requirements and energy usage</li>
+                    <li><strong>Soil Health:</strong> Improved soil conditions through optimal moisture levels</li>
+                    <li><strong>Crop Optimization:</strong> Better crop yields with reduced resource input</li>
+                </ul>
+            </div>
+
+            <h3>Economic Benefits</h3>
+            <ul>
+                <li><strong>Reduced Water Costs:</strong> Significant savings on water bills and pumping costs</li>
+                <li><strong>Improved Crop Yields:</strong> Better crop health and productivity</li>
+                <li><strong>Labor Efficiency:</strong> Reduced manual irrigation management requirements</li>
+                <li><strong>Resource Optimization:</strong> Better utilization of agricultural inputs</li>
+            </ul>
+
+            <h3>Scalability and Adoption</h3>
+            <p>
+                The system is designed to be easily scalable and adaptable to different agricultural contexts, 
+                making it suitable for implementation across various farming operations in Vietnam and beyond.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Data Analysis & Insights</h2>
+            
+            <h3>Machine Learning Integration</h3>
+            <p>
+                The system incorporates machine learning algorithms to analyze historical data and provide 
+                intelligent irrigation recommendations based on patterns and environmental conditions.
+            </p>
+
+            <h3>Key Analytics Features</h3>
+            <ul>
+                <li><strong>Pattern Recognition:</strong> Identification of optimal irrigation patterns</li>
+                <li><strong>Predictive Modeling:</strong> Forecasting water requirements based on weather and crop data</li>
+                <li><strong>Performance Optimization:</strong> Continuous improvement of irrigation efficiency</li>
+                <li><strong>Anomaly Detection:</strong> Identification of unusual soil or environmental conditions</li>
+            </ul>
+
+            <h3>Data Visualization</h3>
+            <p>
+                The system provides comprehensive data visualization tools for monitoring system performance, 
+                analyzing trends, and making informed decisions about irrigation management.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Technical Challenges & Solutions</h2>
+            
+            <h3>Challenge 1: Sensor Calibration</h3>
+            <p><strong>Problem:</strong> Ensuring accurate sensor readings across different soil types and conditions.</p>
+            <p><strong>Solution:</strong> Implemented comprehensive calibration procedures and validation algorithms for sensor accuracy.</p>
+
+            <h3>Challenge 2: Power Management</h3>
+            <p><strong>Problem:</strong> Providing reliable power supply for remote sensor deployment.</p>
+            <p><strong>Solution:</strong> Designed solar-powered sensor nodes with battery backup systems for continuous operation.</p>
+
+            <h3>Challenge 3: Data Reliability</h3>
+            <p><strong>Problem:</strong> Ensuring consistent data transmission in rural agricultural environments.</p>
+            <p><strong>Solution:</strong> Implemented robust error handling and data validation with offline storage capabilities.</p>
+
+            <h3>Challenge 4: System Integration</h3>
+            <p><strong>Problem:</strong> Integrating with existing irrigation infrastructure and farming practices.</p>
+            <p><strong>Solution:</strong> Designed modular components that can be easily integrated with existing systems.</p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Testing & Validation</h2>
+            
+            <h3>Field Testing</h3>
+            <ul>
+                <li><strong>Sensor Accuracy:</strong> Validated sensor readings against laboratory measurements</li>
+                <li><strong>System Reliability:</strong> Long-term testing in various environmental conditions</li>
+                <li><strong>Water Savings:</strong> Measured actual water consumption reduction</li>
+                <li><strong>Crop Performance:</strong> Monitored crop health and yield improvements</li>
+            </ul>
+
+            <h3>Performance Metrics</h3>
+            <p>
+                The system demonstrated significant improvements in water efficiency, with measurable reductions 
+                in water consumption while maintaining or improving crop yields.
+            </p>
+
+            <h3>User Feedback</h3>
+            <p>
+                Farmer feedback was incorporated throughout the development process to ensure the system meets 
+                practical agricultural needs and is easy to use in real-world farming conditions.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Learning Outcomes</h2>
+            
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-number">30-40%</div>
+                    <div class="metric-label">Water Savings</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">IoT</div>
+                    <div class="metric-label">Architecture</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Raspberry Pi</div>
+                    <div class="metric-label">Integration</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">Sustainable</div>
+                    <div class="metric-label">Agriculture</div>
+                </div>
+            </div>
+
+            <h3>Technical Skills Developed</h3>
+            <ul>
+                <li><strong>IoT Development:</strong> Sensor integration and wireless communication</li>
+                <li><strong>Hardware Programming:</strong> Raspberry Pi and microcontroller programming</li>
+                <li><strong>Data Analysis:</strong> Agricultural data processing and analytics</li>
+                <li><strong>System Integration:</strong> Hardware and software integration</li>
+                <li><strong>Sustainability Engineering:</strong> Environmental impact assessment and optimization</li>
+            </ul>
+
+            <h3>Project Management</h3>
+            <p>
+                This project provided valuable experience in managing complex engineering projects with multiple 
+                stakeholders, technical challenges, and real-world implementation requirements.
+            </p>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Future Development</h2>
+            
+            <h3>Phase 2: Advanced Features</h3>
+            <ul>
+                <li><strong>AI Integration:</strong> Advanced machine learning for predictive irrigation</li>
+                <li><strong>Weather Integration:</strong> Real-time weather data for enhanced predictions</li>
+                <li><strong>Mobile App:</strong> Comprehensive mobile application for farmers</li>
+                <li><strong>Multi-Crop Support:</strong> Crop-specific algorithms and recommendations</li>
+            </ul>
+
+            <h3>Phase 3: Commercial Deployment</h3>
+            <ul>
+                <li><strong>Large-Scale Deployment:</strong> Implementation across multiple farms</li>
+                <li><strong>Commercial Platform:</strong> SaaS model for agricultural IoT services</li>
+                <li><strong>Research Collaboration:</strong> Partnerships with agricultural research institutions</li>
+                <li><strong>International Expansion:</strong> Adaptation for different agricultural regions</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Lessons Learned</h2>
+            
+            <p>
+                This project reinforced several important principles in IoT and agricultural technology:
+            </p>
+            
+            <ul>
+                <li><strong>User-Centered Design:</strong> Technology must serve practical farming needs</li>
+                <li><strong>Reliability is Critical:</strong> Agricultural systems require robust, fail-safe operation</li>
+                <li><strong>Sustainability Matters:</strong> Environmental impact must be considered in all design decisions</li>
+                <li><strong>Scalability is Essential:</strong> Solutions must be adaptable to different contexts</li>
+                <li><strong>Data Quality:</strong> Accurate sensor data is fundamental to system success</li>
+            </ul>
+        </div>
+
+        <div class="case-study-section">
+            <h2>Conclusion</h2>
+            
+            <p>
+                The Vietnam Smart Irrigation System demonstrates the potential of IoT technology to address 
+                real-world agricultural challenges while promoting sustainability and efficiency. The project 
+                successfully combines hardware engineering, software development, and environmental science 
+                to create a practical solution for modern agriculture.
+            </p>
+            
+            <p>
+                The experience gained from this project is invaluable for understanding the intersection of 
+                technology and agriculture, particularly in developing sustainable solutions for resource 
+                management. The skills developed in IoT development, data analysis, and environmental 
+                engineering are directly applicable to future projects in agricultural technology and 
+                sustainability engineering.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

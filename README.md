@@ -1,4 +1,4 @@
-# Anh Pham - Modern Portfolio Website
+# Alec Pham - Modern Portfolio Website
 
 A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Features a clean design, dark/light mode toggle, smooth animations, and mobile-first responsive design.
 
@@ -12,6 +12,8 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Fea
 - **Contact Form**: Functional contact form with validation
 - **SEO Optimized**: Proper meta tags and semantic HTML
 - **Performance**: Optimized for fast loading and smooth performance
+- **Project Links**: Direct links to GitHub repositories and live demos
+- **Professional Integration**: LinkedIn and GitHub profile integration
 
 ## 📁 Project Structure
 
@@ -39,36 +41,43 @@ Portfolio/
 ## 🎨 Customization Guide
 
 ### Personal Information
-Update the following sections in `index.html`:
+The portfolio is currently customized for Alec Pham with the following information:
 
-1. **Hero Section** (lines 40-50):
-   - Update your name and title
-   - Modify the description
-   - Add your actual email address
+1. **Hero Section**: 
+   - Name: Alec Pham
+   - Title: Cybersecurity Specialist & Team Leader
+   - Current status: Computer Science Senior at ASU (3.72 GPA)
+   - Links: LinkedIn, GitHub, Contact
 
-2. **About Section** (lines 80-90):
-   - Update your personal quote
-   - Modify the about text
-   - Add/remove skill tags
+2. **About Section**: 
+   - Personal quote and description
+   - Skills: Cybersecurity, Python, Java, SQL, HTML/CSS, JavaScript, Flask, PostgreSQL, AWS, MATLAB, Project Management, Team Leadership, Data Analysis, Social Media Management, Adobe Creative Suite
 
-3. **Education** (lines 100-130):
-   - Update your educational background
-   - Add/remove education entries
+3. **Education**: 
+   - Minor in Project Management (Jan 2024 - Dec 2025)
+   - BS Computer Science - Cybersecurity (Aug 2021 - Dec 2025) | GPA: 3.72
+   - FPT High School (2018 - 2021)
 
-4. **Projects** (lines 140-200):
-   - Replace with your actual projects
-   - Add project images (optional)
-   - Update project descriptions and tags
+4. **Projects**: 
+   - **Desert CodeSprouts** - Cybersecurity education game ([GitHub](https://github.com/AlePam109/Desert-CodeSprouts))
+   - **The Spot** - Yelp-like web app ([GitHub](https://github.com/AlePam109/412))
+   - **Network Intrusion Detection System** - Snort-based NIDS
+   - **CommUnity** - AI-driven community platform ([Live Demo](https://main.dg788ocmeaqpm.amplifyapp.com/)) - 2nd Place Winner
+   - **Vietnam Smart Irrigation System** - IoT/Raspberry Pi project
+   - **SPYN** - Autonomous vehicle with MATLAB
 
-5. **Experience** (lines 210-280):
-   - Update your work experience
-   - Add/remove leadership roles
-   - Modify descriptions
+5. **Experience**: 
+   - Student Supervisor at ASU (Jul 2024 - Present) - Leading 60+ students
+   - Data Analyst at ASU (Feb 2024 - Jul 2024) - 250 profiles per shift
+   - Marketing Manager at SEN English Center (Aug 2021 - Sep 2023) - 250% engagement increase
+   - Freelance Graphic Designer at FPT High School (Mar 2019 - May 2021)
+   - Various leadership roles in professional organizations
 
-6. **Contact** (lines 290-320):
-   - Update your email address
-   - Add your location
-   - Modify contact information
+6. **Contact**: 
+   - Email: anh.pham@asu.edu
+   - Location: Tempe, AZ
+   - LinkedIn: https://www.linkedin.com/in/anhpham19/
+   - GitHub: https://github.com/AlePam109
 
 ### Styling Customization
 
@@ -107,7 +116,7 @@ Modify animation speeds and effects in `styles.css`:
 1. **Profile Picture**: Replace the placeholder in the hero section
    ```html
    <div class="profile-placeholder">
-       <img src="path/to/your/image.jpg" alt="Your Name">
+       <img src="path/to/your/image.jpg" alt="Alec Pham">
    </div>
    ```
 
@@ -118,6 +127,25 @@ Modify animation speeds and effects in `styles.css`:
        <!-- rest of project content -->
    </div>
    ```
+
+### Project Links Integration
+
+The portfolio includes direct links to:
+- **GitHub Repositories**: View source code for projects
+- **Live Demos**: Interactive web applications
+- **Professional Profiles**: LinkedIn and GitHub integration
+
+To add more project links:
+```html
+<div class="project-links">
+    <a href="https://github.com/username/repo" target="_blank" rel="noopener" class="project-link">
+        <i class="fab fa-github"></i> View Code
+    </a>
+    <a href="https://your-demo-url.com" target="_blank" rel="noopener" class="project-link">
+        <i class="fas fa-external-link-alt"></i> Live Demo
+    </a>
+</div>
+```
 
 ### Contact Form Integration
 
