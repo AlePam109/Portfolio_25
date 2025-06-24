@@ -164,10 +164,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Contact
 
 For questions or support:
-- Email: alecpham0109@gmail.com
-- LinkedIn: https://www.linkedin.com/in/anhpham19
-- GitHub: AlePam109
-
+- **Email**: alecpham0109@gmail.com
+- **LinkedIn**: [https://www.linkedin.com/in/anhpham19/]
+- **GitHub**: [https://github.com/AlePam109]
 ---
+
+**Built with ❤️ by Alec Pham**
+
+*Last updated: June 2025*
 
 **Note**: This portfolio uses Vercel serverless functions for secure email handling. All sensitive data is protected with environment variables and never exposed to the client. 
