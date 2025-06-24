@@ -106,10 +106,10 @@ While this is a personal portfolio, suggestions and feedback are welcome:
 
 - **LinkedIn**: [https://www.linkedin.com/in/anhpham19/](https://www.linkedin.com/in/anhpham19/)
 - **GitHub**: [https://github.com/AlePam109](https://github.com/AlePam109)
-- **Email**: anh.pham@asu.edu
+- **Email**: alecpham0109@gmail.com
 
 ---
 
 **Built with ❤️ by Alec Pham**
 
-*Last updated: January 2025* 
+*Last updated: June 2025* 
